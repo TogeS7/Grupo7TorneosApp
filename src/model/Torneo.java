@@ -6,16 +6,16 @@ import patterns.observer.ObservadorTorneo;
 import patterns.strategy.EstrategiaFixture;
 
 public class Torneo {
-    private int id;
-    private String nombre;
-    private String disciplina;
-    private int cupoMaximo;
-    private String fechaInicio;
+    private final int id;
+    private final String nombre;
+    private final String disciplina;
+    private final int cupoMaximo;
+    private final String fechaInicio;
     private String estado; // "ABIERTO", "EN_CURSO", "FINALIZADO"
-    private EstrategiaFixture estrategiaFixture;
-    private List<String> participantes;
+    private final EstrategiaFixture estrategiaFixture;
+    private final List<String> participantes;
     private List<Partido> partidos;
-    private List<ObservadorTorneo> observadores;
+    private final List<ObservadorTorneo> observadores;
 
     public Torneo(int id, String nombre, String disciplina, int cupoMaximo, String fechaInicio, EstrategiaFixture estrategiaFixture) {
         this.id = id;

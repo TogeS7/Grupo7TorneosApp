@@ -1,9 +1,11 @@
 package model;
 
 public class Partido {
-    private String local;
-    private String visitante;
-    private String ronda;
+    private static final String ESTADO_FINALIZADO = "FINALIZADO";
+
+    private final String local;
+    private final String visitante;
+    private final String ronda;
     private String estado;
     private int golesLocal;
     private int golesVisitante;
@@ -18,7 +20,7 @@ public class Partido {
     public void registrarResultado(int golesLocal, int golesVisitante) {
         this.golesLocal = golesLocal;
         this.golesVisitante = golesVisitante;
-        this.estado = "FINALIZADO";
+        this.estado = ESTADO_FINALIZADO;
     }
 
     public String getLocal() { return local; }
@@ -27,7 +29,7 @@ public class Partido {
 
     @Override
     public String toString() {
-        if ("FINALIZADO".equals(estado)) {
+        if (ESTADO_FINALIZADO.equals(estado)) {
             return "[" + ronda + "] " + local + " " + golesLocal + " - " + golesVisitante + " " + visitante + " (" + estado + ")";
         }
         return "[" + ronda + "] " + local + " vs " + visitante + " (" + estado + ")";
